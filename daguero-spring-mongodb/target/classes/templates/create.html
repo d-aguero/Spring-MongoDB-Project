@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="default">
+    <head>
+        <title>Create Player</title>
+    </head>
+    <body>
+        <div layout:fragment="content" class="row">
+            <div class="col-xs-8 col-md-8">
+                <h3>
+                    <a href="/player" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list"></span>Back to player list</a>
+                </h3>
+                <h2>Create Player</h2>
+                <form action="/save">
+                    <div class="form-group">
+                        <label for="email">Player Tag:</label>
+                        <input type="text" class="form-control" name="tag" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Player Character</label>
+                        <input type="text" class="form-control" name="character" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Player Wins</label>
+                        <input type="number" class="form-control" name="wins" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Player Losses</label>
+                        <input type="number" class="form-control" name="losses" />
+                    </div>
+                    <button type="submit" class="btn btn-success">Save</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

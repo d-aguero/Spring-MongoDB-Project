@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="default">
+    <head>
+        <title>Player List</title>
+    </head>
+    <body>
+        <div layout:fragment="content" class="row">
+            <div class="col-xs-8 col-md-8">
+                <h2>Player List</h2>
+                <div class="table-responsive">
+                    <table class="table" id="player-table">
+                        <thead>
+                            <tr>
+                                <th>Player</th>
+                                <th>Character</th>
+                                <th>Wins</th>
+                                <th>Losses</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="player : ${players}">
+                                <td><a th:text="${player.tag}" th:href="@{'/show/' + ${player.id}}"></a></td>
+                                <td th:text="${player.character}"></td>
+                                <td th:text="${player.wins}"></td>
+                                <td th:text="${player.losses}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3>
+                    <a href="/create" class="btn btn-primary"><span class="glyphicon glyphicon-plus-sign"></span>Add New Player</a>
+                </h3>
+            </div>
+        </div>
+    </body>
+</html>
